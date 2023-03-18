@@ -6,3 +6,5 @@ app.get('/', function (req, res) {
 })
 
 app.listen(1337, () => console.log('Lights out and away we go'));
+
+app.use(express.static('client/public'));
