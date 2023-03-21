@@ -18,6 +18,33 @@ h1{
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     }
+
+#new{
+    position: fixed;
+    top: 470px;
+    left: 1320px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 200%;;
+    color: #fa0000;
+    background-image: -webkit-linear-gradient(105deg, #fa0000 12%,#464444 100%,#ff1212 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;position:fixed;
+    top
+}
+
+#noacct{
+    position: fixed;
+    top: 700px;
+    left: 1300px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 160%;;
+    color: #fa0000;
+    background-image: -webkit-linear-gradient(105deg, #fa0000 12%,#464444 100%,#ff1212 50%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;position:fixed;
+}
     
 #signin{
     position: fixed;
@@ -35,9 +62,9 @@ h1{
          }
 #Continue{
     position: fixed;
-    top: 800px;
-    right: 275px;
+    top: 775px;
+    right: 270px;
     width: auto;
-    height:72px;
+    height:80px;
 }
                 
