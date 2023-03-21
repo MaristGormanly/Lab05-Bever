@@ -1,4 +1,4 @@
-//$ cd "C:\Users\grant\Documents\GitHub\Lab05-Bever"
+//cd "C:\Users\grant\Documents\GitHub\Lab05-Bever"
 const express = require('express');
 const app = express();
 app.get('/', function (req, res) {
