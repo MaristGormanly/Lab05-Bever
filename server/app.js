@@ -5,7 +5,7 @@ app.get('/', function (req, res) {
     res.sendFile('index.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
 })
 app.get('/signin', function (req, res) {
-    res.sendFile('page1.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
+    res.sendFile('signin.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
 })
 app.listen(1337, () => console.log('Lights out and away we go'));
 
