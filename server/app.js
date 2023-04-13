@@ -1,6 +1,12 @@
 //cd "C:\Users\grant\Documents\GitHub\Lab05-Bever"
 const express = require('express');
 const app = express();
+
+// Includes userRoute Module
+let userRoute = require('./route/userRoute');
+let postRoute = require('./route/postRoute');
+
+
 app.get('/', function (req, res) {
     res.sendFile('index.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
 })
