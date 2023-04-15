@@ -4,7 +4,6 @@ const app = express();
 
 // Includes userRoute Module
 let userRoute = require('./route/userRoute');
-let postRoute = require('./route/postRoute');
 
 
 app.get('/', function (req, res) {
