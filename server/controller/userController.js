@@ -43,7 +43,6 @@ exports.updateUser = function(req, res) {
 	// check to see what has been passed and update the local copy
 	console.log(req.body.firstName);
 	if(req.body.firstName)
-
 		updatedUser.firstName = req.body.firstName;
 	if(req.body.lastName)
 		updatedUser.lastName = req.body.lastName;
