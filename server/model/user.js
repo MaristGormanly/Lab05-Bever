@@ -1,11 +1,11 @@
 console.log("[Model] initialized");
-class user {
-    constructor (firstName, lastName) {
-    this.firstName = firstName;
-    this.lastName = lastName;
-    }
-    }
-    exports.createUser = function( firstName, lastName ) {
-        return new user( firstName, lastName );
-        }
-        
+function user(first, last, email, password) {
+    this.firstName = first;
+	this.lastName = last;
+	this.email = email;
+	this.password = password;
+}
+
+exports.createUser = function(first, last, email, password) {
+  return new user(first, last, email, password);
+};

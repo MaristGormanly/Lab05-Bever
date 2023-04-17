@@ -16,20 +16,20 @@ users.push(jessica);
 
 exports.getAllUsers = ( req, res ) => {
     res.setHeader( 'Content-Type', 'application/json' );
-    res.send( users );
-    }
+    res.send(users);
+}
 
 // retrieve the user in the :index parameter of the request and return as json
-exports.getUser = ( req, res ) => {
-res.setHeader( 'Content-Type', 'application/json' );
-res.send( users[ req.params.index ] );
+exports.getUser = (req, res ) => {
+    res.setHeader('Content-Type', 'application/json');
+    res.send(users[ req.params.index ]);
 }
 
 // save a user
 exports.saveUser = ( req, res ) => {
-    let newUser = user.createUser( req.body.firstName, req.body.lastName );
-    users.push( newUser );
-    res.setHeader( 'Content-Type', 'application/json' );
-    res.send( users );
-    }
+    let newUser = user.createUser(req.body.firstName, req.body.lastName);
+    users.push(newUser);
+    res.setHeader('Content-Type', 'application/json');
+    res.send(users);
+}
     
