@@ -5,7 +5,6 @@ var user = require ('../model/user');
 let users = [];
 // create a user
 let brian = user.createUser("Brian", "Gormanly");
-// add the user to the array
 users.push(brian);
 let craig = user.createUser("Craig", "Williams");
 users.push(craig);
@@ -14,22 +13,48 @@ users.push(eren);
 let jessica = user.createUser("Jessica", "Stevens");
 users.push(jessica);
 
-exports.getAllUsers = ( req, res ) => {
-    res.setHeader( 'Content-Type', 'application/json' );
-    res.send(users);
+exports.getUsers = function(req, res) {
+	res.setHeader('Content-Type', 'application/json');
+	res.send(users);
 }
 
-// retrieve the user in the :index parameter of the request and return as json
-exports.getUser = (req, res ) => {
-    res.setHeader('Content-Type', 'application/json');
-    res.send(users[ req.params.userId ]);
+exports.saveUser = function(req, res) {
+	let newUser = user.createUser(req.body.firstName, req.body.lastName, req.body.email, req.body.password);
+	users.push(newUser);
+	res.setHeader('Content-Type', 'application/json');
+	res.send(users);
 }
 
-// save a user
-exports.saveUser = ( req, res ) => {
-    let newUser = user.createUser(req.body.firstName, req.body.lastName);
-    users.push(newUser);
-    res.setHeader('Content-Type', 'application/json');
-    res.send(users);
+exports.getUser = function(req, res) {
+	res.setHeader('Content-Type', 'application/json');
+  res.send(users[req.params.userId]);
 }
-    
+
+exports.deleteUser = function(req, res) {
+	users.splice(req.params.userId, 1);
+	res.setHeader('Content-Type', 'application/json');
+	res.send(users);
+}
+
+exports.updateUser = function(req, res) {
+	// get the existing user from the array
+	var updatedUser = users[req.params.userId];
+
+	// check to see what has been passed and update the local copy
+	console.log(req.body.firstName);
+	if(req.body.firstName)
+
+		updatedUser.firstName = req.body.firstName;
+	if(req.body.lastName)
+		updatedUser.lastName = req.body.lastName;
+	if(req.body.email)
+		updatedUser.email = req.body.email;
+	if(req.body.password)
+		updatedUser.password = req.body.password;
+
+	// save the local copy of the user back into the array
+	users[req.params.userId] = updatedUser;
+
+	res.setHeader('Content-Type', 'application/json');
+	res.send(users[req.params.userId]);
+}
