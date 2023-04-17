@@ -16,25 +16,25 @@ router.route('/')
     .post( ( req, res ) => {
     userController.saveUser( req, res );
     });
-    .patch( ( req, res ) => {
+    /*.patch( ( req, res ) => {
         userController.updateUser( req, res );
     })
     .delete( ( req, res ) => {
     userController.saveUser( req, res );
     });
-    
+    */
 
 // user by array index route
 router.route('/:userId')
     .get( ( req, res ) => {
     userController.getUser( req, res );
     });
-    .patch( ( req, res ) => {
+    /*.patch( ( req, res ) => {
         userController.updateUser( req, res );
     })
     .delete( ( req, res ) => {
     userController.saveUser( req, res );
     });
-    
+    */
 
 module.exports = router;
