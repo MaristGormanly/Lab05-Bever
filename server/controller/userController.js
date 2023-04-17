@@ -22,7 +22,7 @@ exports.getAllUsers = ( req, res ) => {
 // retrieve the user in the :index parameter of the request and return as json
 exports.getUser = (req, res ) => {
     res.setHeader('Content-Type', 'application/json');
-    res.send(users[ req.params.index ]);
+    res.send(users[ req.params.userId ]);
 }
 
 // save a user

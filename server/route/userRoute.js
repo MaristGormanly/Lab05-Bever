@@ -8,21 +8,21 @@ var express = require('express');
 // see https://expressjs.com/en/guide/routing.html
 var router = express.Router();
 
-// all users routes
+//Post
 router.route('/')
-.get( ( req, res ) => {
-userController.getAllUsers( req, res );
-})
-.post( ( req, res ) => {
-userController.saveUser( req, res );
-}
-);
+    .get( ( req, res ) => {
+        userController.getAllUsers( req, res );
+    })
+    .post( ( req, res ) => {
+    userController.saveUser( req, res );
+    });
+
+
 // user by array index route
-router.route('/:index')
-.get( ( req, res ) => {
-userController.getUser( req, res );
-}
-);
+router.route('/:userId')
+    .get( ( req, res ) => {
+    userController.getUser( req, res );
+    });
 
 
 module.exports = router;
