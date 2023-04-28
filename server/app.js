@@ -1,20 +1,22 @@
-//cd "C:\Users\grant\Documents\GitHub\Lab05-Bever"
+/*
+cd "C:\Users\grant\Documents\GitHub\Lab05-Bever"
+*/
 const express = require('express');
 const app = express();
-
-// Includes userRoute Module
-let userRoute = require('./route/userRoute');
-
-let userRoutes = require('./route/userRoute');
-app.use('/api/user', userRoute);
 
 
 const bodyParser = require('body-parser');
 app.use(bodyParser.urlencoded({
     extended: true
 }));
+app.use(bodyParser.json());
 
-app.use(bodyParser.json())
+let userRoute = require('./route/userRoute');
+
+let userRoutes = require('./route/userRoute');
+app.use('/api/user', userRoute);
+
+
 app.get('/', function (req, res) {
     res.sendFile('index.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
 })

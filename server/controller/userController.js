@@ -3,7 +3,7 @@ console.log("[userController] initialized");
 var user = require ('../model/user');
 // create an array to hold the created users
 let users = [];
-// create a user
+// creates the users
 let brian = user.createUser("Brian", "Gormanly");
 users.push(brian);
 let craig = user.createUser("Craig", "Williams");
@@ -12,13 +12,14 @@ let eren = user.createUser("Eren", "McDaniels");
 users.push(eren);
 let jessica = user.createUser("Jessica", "Stevens");
 users.push(jessica);
-
+//GetUsers function
 exports.getUsers = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
 	res.send(users);
 }
-
+//function for the .post API
 exports.saveUser = function(req, res) {
+	console.log(req.body)
 	let newUser = user.createUser(req.body.firstName, req.body.lastName, req.body.email, req.body.password);
 	users.push(newUser);
 	res.setHeader('Content-Type', 'application/json');
