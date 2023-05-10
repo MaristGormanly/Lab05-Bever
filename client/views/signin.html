@@ -4,15 +4,17 @@
         <title>Sign In</title>
         <link rel="stylesheet" href="http://localhost:1337/css/signin.css"> 
         <link rel="icon" type="image/x-icon" href="http://localhost:1337/img/fav.png">
-
+        
     </head>
-    <form id="inputs">
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email"><br>
-        <label for="password">password:</label><br>
-        <input type="text" id="password" name="password">
-      </form>
-    
-
-
+    <body>
+        <h1>Sign In</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <input type="submit" value="Sign In">
+        </form>
+    </body>
+    </html>
 </html>

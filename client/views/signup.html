@@ -4,16 +4,20 @@
         <title>Sign Up</title>
         <link rel="stylesheet" href="http://localhost:1337/css/signup.css"> 
         <link rel="icon" type="image/x-icon" href="http://localhost:1337/img/fav.png">
-
+        <meta charset="UTF-8">
     </head>
-    <form id="inputs">
-        <label for="email">Email:</label><br>
-        <input type="text" id="email" name="email"><br>
-        <label for="username">username:</label><br>
-        <input type="text" id="username" name="username"><br>
-        <label for="password">password:</label><br>
-        <input type="text" id="password" name="password">
-
-      </form>
-   
-</html>
+    <body>
+        <h1>Sign Up</h1>
+        <form>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required>
+            <label for="confirm-password">Confirm Password:</label>
+            <input type="password" id="confirm-password" name="confirm-password" required>
+            <input type="submit" value="Sign Up">
+        </form>
+    </body>
+    </html>

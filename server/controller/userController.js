@@ -1,17 +1,18 @@
 console.log("[userController] initialized");
 
 var user = require ('../model/user');
-// create an array to hold the created users
 let users = [];
-// creates the users
+
 let brian = user.createUser("Brian", "Gormanly");
-users.push(brian);
 let craig = user.createUser("Craig", "Williams");
-users.push(craig);
 let eren = user.createUser("Eren", "McDaniels");
-users.push(eren);
 let jessica = user.createUser("Jessica", "Stevens");
+
+users.push(brian);
+users.push(craig);
+users.push(eren);
 users.push(jessica);
+
 //GetUsers function
 exports.getUsers = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
@@ -28,7 +29,7 @@ exports.saveUser = function(req, res) {
 
 exports.getUser = function(req, res) {
 	res.setHeader('Content-Type', 'application/json');
-  res.send(users[req.params.userId]);
+	res.send(users[req.params.userId]);
 }
 
 exports.deleteUser = function(req, res) {

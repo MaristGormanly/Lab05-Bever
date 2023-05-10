@@ -1,0 +1,5 @@
+PostgreSQL: CREATE USER my_user WITH ENCRYPTED
+PASSWORD 'password';
+
+PostgreSQL: CREATE POST my_post WITH ENCRYPTED
+PASSWORD 'password';

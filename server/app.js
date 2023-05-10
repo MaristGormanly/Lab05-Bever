@@ -12,10 +12,9 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 
 let userRoute = require('./route/userRoute');
-
-let userRoutes = require('./route/userRoute');
+let postRoute = require('./route/postRoute');
 app.use('/api/user', userRoute);
-
+app.use('/api/post', postRoute);
 
 app.get('/', function (req, res) {
     res.sendFile('index.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
