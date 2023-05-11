@@ -29,6 +29,6 @@ app.get('/signup', function (req, res) {
 app.get('/home', function (req, res) {
     res.sendFile('home.html', {root: 'C:/Users/grant/Documents/GitHub/Lab05-Bever/client/views' })
 })
-app.listen(1336, () => console.log('Lights out and away we go'));
+app.listen(1337, () => console.log('Lights out and away we go'));
 
 app.use(express.static('client/public'));
