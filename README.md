@@ -1,4 +1,4 @@
-# Hello thank you for downloading and taking a look at the project I put alot of time into, the website is called the Paddock and is designed to be a F1 Forum like website where users can discuss all things Formula 1. 
+ Hello thank you for downloading and taking a look at the project I put alot of time into, the website is called the Paddock and is designed to be a F1 Forum like website where users can discuss all things Formula 1. 
 
 # As of now it is missing many of the features I wouldve liked it to possess, for example in the original design there was a page for all F1 teams so Ferrari Fans could best discuss how terrible our team is. It is also lacking in object perminance as I could not get the database to work. I plan on fixing this myself and making the Paddock as good as it should be but as of now it can handle creating new posts through the text inputs.
 
