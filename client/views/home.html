@@ -2,18 +2,18 @@
 <html>
     <head>
         <title>Home</title>
-        <!--Links to other files-->
         <link rel="stylesheet" href="http://localhost:1337/css/Home.css"> 
         <link rel="icon" type="image/x-icon" href="http://localhost:1337/img/fav.png">
         <head>
             <meta charset="UTF-8">
             <title>Home</title>
+            <script src="/js/home.js"> </script>
 
         </head>
         <body>
             <h1>Home</h1>
             <div class="container">
-                <div class="post-form">
+                <div class="post-form" id = "post-form">
                     <h2>New Post</h2>
                     <form>
                         <label for="title">Title:</label>
@@ -23,9 +23,10 @@
                         <input type="submit" value="Post">
                     </form>
                 </div>
-                <div class="post-list">
+                <div class="post-list" id="post-list">
                     <h2>Recent Posts</h2>
-                    <!-- Placeholder for post list -->
+                    <div id="postForm"></div>
+
                 </div>
             </div>
         </body>

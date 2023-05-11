@@ -1,7 +1,6 @@
 console.log("[postRoute] Initialized");
 
 let postController = require('../controller/postController');
-let postRoutes = require('../controller/postController');
 
 var express = require('express');
 var router = express.Router();
@@ -12,6 +11,7 @@ router.route('/')
         postController.getPosts( req, res );
     })
     .post( ( req, res ) => {
+        console.log(req.body);
         postController.savePost( req, res );
     })
     .patch( ( req, res ) => {

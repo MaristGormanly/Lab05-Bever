@@ -1,50 +1,60 @@
-const { json } = require("body-parser");
-const { application } = require("express");
-
-window.addEventListener( 'load', () => {
+window.addEventListener('load', () => {
+    // Load the posts on page load
     getFeed();
-})
-
-function getFeed(){
-    fetch( '/api/post').then( ( res ) => {
-        if( res.status >= 400 ) {
-            console.log( "There was a problem with the asynch feed call" );
-            return;
-        }
-
-       res.json().then( ( posts) => {
-        console.log( posts );
-        let feedHtml = "<div class='myclass' id='feedContainer'>";
-        posts.forEach( post => {
-            console.log( post )
-            feedHtml += "<h4>" + post.title + "</h4>";
-            feedHtml += "<p>" + post.description + "</p>";
-            feedHtml += "<hr />";
-        });   
-
-        feedHtml += "</div>";
-
-        document.getElementById( 'feed' ).innerHTML = feedHtml;
-        })     
-    })
-
-document.getElementById('postSubmit').addEventListener('click', () => {
-    let title = document.getElementById('titleInput').value;
-    let description = document.getElementById('descriptionInput').value;
-
-    fetch('/api/post', {
-        method:'post',
+  
+    // Add an event listener to the form submit button
+    document.getElementById('post-form').addEventListener('submit', (event) => {
+      event.preventDefault();
+  
+      // Get the title and description values from the form
+      let title = document.getElementById('title').value;
+      let description = document.getElementById('description').value;
+  
+      // Use the fetch API to send a POST request to the server with the new post data
+      fetch('/api/post', {
+        method: 'POST',
         headers: {
-            "Content-type": "application/json; charset=UTF-8"
+          'Content-Type': 'application/json'
         },
-        body: '{"title": "' + title + '", "description": "' + description + '"}'
-    }).then(function(response) {
-        if (response.status !== 200) {
-            console.log('problem with ajax call ' + response.status + " msg: ");
+        body: JSON.stringify({
+          title: title,
+          description: description
+        })
+      })
+      .then(response => {
+        // If the response from the server is successful, clear the form and reload the posts
+        if (response.ok) {
+          document.getElementById('title').value = '';
+          document.getElementById('description').value = '';
+          getFeed();
+        } else {
+          console.log('Error submitting post');
         }
-        getFeed();
-        return;
-    
+      });
     });
-});
-}
+  });
+  
+  // Function to get the posts and display them on the page
+  function getFeed() {
+    fetch('/api/post')
+    .then(response => {
+      // If the response from the server is successful, convert it to JSON and display the posts
+      if (response.ok) {
+        response.json()
+        .then(posts => {
+          let feedHtml = '';
+          posts.forEach(post => {
+            feedHtml += `
+              <div class="post">
+                <h3>${post.title}</h3>
+                <p>${post.description}</p>
+              </div>
+            `;
+          });
+          document.getElementById('postForm').innerHTML = feedHtml;
+        });
+      } else {
+        console.log('Error retrieving posts');
+      }
+    });
+  }
