@@ -37,5 +37,5 @@ Note the FRONT_END_NAME in the future you can change this to use your own front 
 
 
 
-# Navigate your web browser to http://localhost:1337 
-# All set!
+ Navigate your web browser to http://localhost:1337 
+ All set!
